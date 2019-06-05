@@ -136,10 +136,7 @@ use_demo.py                 使用示例
     ```python
     import test
     
-    
     # 调用test模块提供的deal函数
-    import test
-    
     test.deal("./dip_all.txt", [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
     
     ```
