@@ -7,6 +7,14 @@ use_demo.py                 使用示例
 
 > ## 使用说明
 
+- ### 安装依赖
+    因为`test.py`中使用了`PrettyTable`库，用于在控制台中输出表格，所以需要安装这个依赖
+    
+    进入到项目的根目录，执行下面的命令
+    ```bash
+    pip install PrettyTable
+    ```
+
 - ### test.py模块 deal函数说明
 
     ```python
