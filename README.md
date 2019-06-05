@@ -134,8 +134,6 @@ use_demo.py                 使用示例
     
 - ### 使用示例
     ```python
-
-    # 首先引入test.py模块
     import test
     
     
