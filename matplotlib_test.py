@@ -1,8 +1,15 @@
-import matplotlib.pyplot as plt
-labels='frogs','hogs','dogs','logs'
-sizes=15,20,45,10
-colors='yellowgreen','gold','lightskyblue','lightcoral'
-explode=0,0.1,0,0
-plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,startangle=50)
-plt.axis('equal')
+#!/usr/bin/env python
+# coding=utf-8
+
+from matplotlib import pyplot as plt
+
+x = [5, 8, 10]
+y = [12, 16, 6]
+x2 = [6, 9, 11]
+y2 = [6, 15, 7]
+plt.bar(x, y, align='center')
+plt.bar(x2, y2, color='g', align='center')
+plt.title('Bar graph')
+plt.ylabel('Y axis')
+plt.xlabel('X axis')
 plt.show()

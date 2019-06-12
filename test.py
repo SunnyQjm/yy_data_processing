@@ -6,7 +6,8 @@ from prettytable import PrettyTable
 
 class Data:
 
-    def __init__(self, name, subgragh, degree, eigenvector, information, lac, betweenness, closeness, network):
+    def __init__(self, name, subgragh, degree, eigenvector, information, betweenness, closeness
+                 ):
         """
         name字段表示蛋白质的名字，剩下的是对应的8个属性
         """
@@ -15,10 +16,8 @@ class Data:
         self.degree = degree
         self.eigenvector = eigenvector
         self.information = information
-        self.lac = lac
         self.betweenness = betweenness
         self.closeness = closeness
-        self.network = network
 
 
 # 用来保存正确的中心节点集
@@ -168,7 +167,12 @@ def deal(fileName, sizes):
     print "=============================== 处理" + fileName + " ==============================="
     print
     x = PrettyTable(
-        ["Top", "subgragh", "degree", "eigenvector", "information", "lac", "betweenness", "closeness", "network"])
+        ["Top", "subgragh", "degree", "eigenvector", "information",
+         # "lac",
+         "betweenness",
+         "closeness",
+         # "network"
+         ])
 
     # 用来保存每行数据处理之后得到的Data对象
     datas = []
@@ -193,10 +197,8 @@ def deal(fileName, sizes):
             float(lines[3].split(":")[1].strip()),
             float(lines[4].split(":")[1].strip()),
             float(lines[5].split(":")[1].strip()),
-            float(lines[6].split(":")[1].strip()),
             float(lines[7].split(":")[1].strip()),
             float(lines[8].split(":")[1].strip()),
-            float(lines[9].split(":")[1].strip()),
         ))
 
     result = []  # 字典，用来存储返回值
@@ -209,10 +211,8 @@ def deal(fileName, sizes):
             "degree": judgeByAttr(datas, "degree", size),
             "eigenvector": judgeByAttr(datas, "eigenvector", size),
             "information": judgeByAttr(datas, "information", size),
-            "lac": judgeByAttr(datas, "lac", size),
             "betweenness": judgeByAttr(datas, "betweenness", size),
             "closeness": judgeByAttr(datas, "closeness", size),
-            "network": judgeByAttr(datas, "network", size),
 
         }
         result.append(item)
@@ -222,10 +222,8 @@ def deal(fileName, sizes):
             item["degree"],
             item["eigenvector"],
             item["information"],
-            item["lac"],
             item["betweenness"],
             item["closeness"],
-            item["network"],
         ])
     print x
     return result
